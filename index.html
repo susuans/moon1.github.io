@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>小龙测评果</title>
+<style>
+/* 图片样式 */
+img {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* 放大图片的容器样式 */
+#zoomImageContainer {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 放大图片的样式 */
+#zoomImage {
+  max-width: 90%;
+  max-height: 90%;
+}
+</style>
+</head>
+<body>
+
+<h2>图片集</h2>
+
+<!-- 多张图片 -->
+<div>
+  <img src="C:/Users/26322/Desktop/test/moon1.github.io/moon1.jpg" alt="Moon 1" onclick="showZoomImage('C:/Users/26322/Desktop/test/moon1.jpg')">
+  <img src="C:/Users/26322/Desktop/test/moon1.github.io/moon2.jpg" alt="Moon 2" onclick="showZoomImage('C:/Users/26322/Desktop/test/moon2.jpg')">
+  </div>
+
+<!-- 放大图片的容器 -->
+<div id="zoomImageContainer" onclick="closeZoomImage()">
+  <img id="zoomImage" src="" alt="Zoomed Image">
+</div>
+
+<script>
+// 显示放大图片
+function showZoomImage(src) {
+  const zoomContainer = document.getElementById('zoomImageContainer');
+  const zoomImage = document.getElementById('zoomImage');
+  
+  zoomImage.src = src;
+  zoomContainer.style.display = 'flex';
+}
+
+// 关闭放大图片
+function closeZoomImage() {
+  document.getElementById('zoomImageContainer').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
